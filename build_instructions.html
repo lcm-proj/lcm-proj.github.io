@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>LCM: LCM documentation</title>
+<title>LCM: Build Instructions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -57,7 +57,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,49 +71,98 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LCM documentation </div>  </div>
+<div class="title">Build Instructions </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="main_tutorials"></a>
-Tutorials and Instructions</h1>
+<div class="textblock"><p>The process for building LCM may depend on whether you're building from a released version or from source control.</p>
+<h1>Building a released version</h1>
+<p>These instructions assume you've already downloaded a released of LCM. Replace X.Y.Z below with the specific version number you're building.</p>
+<h2>Ubuntu / Debian</h2>
+<p>Required packages:</p>
 <ul>
-<li><a class="el" href="build_instructions.html">Build Instructions</a></li>
-<li><a class="el" href="tutorial_general.html">Tutorial</a></li>
+<li>build-essential</li>
+<li>libglib2.0-dev</li>
 </ul>
-<h1><a class="anchor" id="main_api_ref"></a>
-API Reference</h1>
+<p>Strongly recommended packages:</p>
 <ul>
-<li><a class="el" href="group__LcmC.html">C</a></li>
-<li><a class="el" href="group__LcmCpp.html">C++</a></li>
-<li><a href="javadocs/index.html">Java</a></li>
-<li><a class="el" href="lua_api.html">Lua</a></li>
-<li><a href="python/index.html">Python</a></li>
+<li>openjdk-6-jdk</li>
+<li>python-dev</li>
 </ul>
-<h1>Specifications</h1>
+<p>From a terminal, run the following commands. </p>
+<pre class="fragment">$ wget http://lcm.googlecode.com/files/lcm-X.Y.Z.tar.gz
+$ tar xzf lcm-X.Y.Z.tar.gz
+$ cd lcm-X.Y.Z
+$ ./configure
+$ make
+$ sudo make install
+$ sudo ldconfig
+</pre><h2>OS/X</h2>
+<p>There are several ways to build LCM on OS/X, none of which are necessarily better than the others.</p>
+<h3>MacPorts</h3>
+<p>Required packages:</p>
 <ul>
-<li><a class="el" href="type_specification.html">LCM Type Specification Language</a></li>
-<li><a class="el" href="udp_multicast_protocol.html">LCM UDP Multicast Protocol Description</a></li>
-<li><a class="el" href="log_file_format.html">LCM Log File format</a></li>
+<li>glib2</li>
 </ul>
-<h1>Publications</h1>
+<p>Strongly recommended packages:</p>
 <ul>
-<li><a href="http://people.csail.mit.edu/albert/pubs/2011-huang-teller-auro-preprint.pdf">LCM Overview</a> - Describes the design principles of LCM, the best place to start for a quick understanding of LCM. 6 pages.<ul>
-<li><em>IROS, Taipei, Taiwan, Oct 2010.</em></li>
+<li>openjdk6</li>
+<li>python26 or python27</li>
+</ul>
+<p>From a terminal, run the following commands. Replace X.Y.Z with the latest version of LCM. </p>
+<pre class="fragment">$ wget http://lcm.googlecode.com/files/lcm-X.Y.Z.tar.gz
+$ tar xzf lcm-X.Y.Z.tar.gz
+$ cd lcm-X.Y.Z
+$ ./configure
+$ make
+$ sudo make install
+</pre><h2>Windows</h2>
+<p>Requirements:</p>
+<ul>
+<li>GLib for Windows (<a href="http://www.gtk.org">http://www.gtk.org</a>). You'll need the following packages<ul>
+<li>GLib (Run-time, dev)</li>
+<li>gettext-runtime (Run-time)</li>
 </ul>
 </li>
-<li><a href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf">Technical Report</a> - An expanded version of the overview, provides a more comprehensive description. 17 pages.<ul>
-<li><em>Technical Report MIT-CSAIL-TR-2009-041, Massachusetts Institute of Technology, 2009</em></li>
 </ul>
-</li>
-</ul>
-<h1><a class="anchor" id="main_other"></a>
-Application notes</h1>
+<p>Building:</p>
+<ol type="1">
+<li>Follow the instructions in WinSpecific/README.txt to setup GLib.</li>
+<li>Open WinSpecific/LCM.sln in MS Visual Studio and build the solution.</li>
+</ol>
+<h2>Other / General</h2>
+<p>On other POSIX.1-2001 systems (e.g., other GNU/Linux distributions, FreeBSD, Solaris, etc.) the only major requirement is to install the GLib 2.x development files. If possible, a Java development kit and Python should also be installed. Then follow the</p>
+<h1>Building from Git</h1>
+<h2>Ubuntu / Debian</h2>
+<p>Required packages:</p>
 <ul>
-<li><a class="el" href="multicast_setup.html">UDP Multicast Setup</a></li>
-<li><a class="el" href="java_notes.html">Java application notes</a> </li>
+<li>build-essential</li>
+<li>autoconf</li>
+<li>automake</li>
+<li>autopoint</li>
+<li>libglib2.0-dev</li>
+<li>gettext</li>
+<li>libtool</li>
 </ul>
+<p>Strongly recommended packages:</p>
+<ul>
+<li>openjdk-6-jdk</li>
+<li>python-dev</li>
+</ul>
+<p>From a terminal, run the following commands. </p>
+<pre class="fragment">$ git clone https://code.google.com/p/lcm lcm
+$ cd lcm
+$ ./bootstrap.sh
+$ ./configure
+$ make
+</pre><h2>OS/X</h2>
+<p><em>TODO</em></p>
+<h2>Windows</h2>
+<p>Same as building from a released version, as above.</p>
+<h2>Other / General</h2>
+<p>To build from Git in other GNU/Linux distributions, FreeBSD, Solaris, etc., you'll need to install autotools. Then follow the terminal commands shown above for Ubuntu. </p>
 </div></div><!-- contents -->
 <hr class="footer"/></body>
 </html>

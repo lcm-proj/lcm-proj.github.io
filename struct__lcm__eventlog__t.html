@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>LCM: LCM documentation</title>
+<title>LCM: lcm_eventlog_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,8 +36,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -57,7 +57,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,49 +79,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="struct__lcm__eventlog__t-members.html">List of all members</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">LCM documentation </div>  </div>
+<div class="title">lcm_eventlog_t Struct Reference<div class="ingroups"><a class="el" href="group__LcmC__lcm__eventlog__t.html">lcm_eventlog_t</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="main_tutorials"></a>
-Tutorials and Instructions</h1>
-<ul>
-<li><a class="el" href="build_instructions.html">Build Instructions</a></li>
-<li><a class="el" href="tutorial_general.html">Tutorial</a></li>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a8808a58fbbda7ab16c2c137f82204d54"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__lcm__eventlog__t.html#a8808a58fbbda7ab16c2c137f82204d54">f</a></td></tr>
+<tr class="separator:a8808a58fbbda7ab16c2c137f82204d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6561a4ed63b69edb7f41bb0d9a5178ae"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__lcm__eventlog__t.html#a6561a4ed63b69edb7f41bb0d9a5178ae">eventcount</a></td></tr>
+<tr class="separator:a6561a4ed63b69edb7f41bb0d9a5178ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6561a4ed63b69edb7f41bb0d9a5178ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t lcm_eventlog_t::eventcount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal counter, keeps track of how many events have been written. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8808a58fbbda7ab16c2c137f82204d54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* lcm_eventlog_t::f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The underlying file handle. Made available for debugging. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="eventlog_8h_source.html">eventlog.h</a></li>
 </ul>
-<h1><a class="anchor" id="main_api_ref"></a>
-API Reference</h1>
-<ul>
-<li><a class="el" href="group__LcmC.html">C</a></li>
-<li><a class="el" href="group__LcmCpp.html">C++</a></li>
-<li><a href="javadocs/index.html">Java</a></li>
-<li><a class="el" href="lua_api.html">Lua</a></li>
-<li><a href="python/index.html">Python</a></li>
-</ul>
-<h1>Specifications</h1>
-<ul>
-<li><a class="el" href="type_specification.html">LCM Type Specification Language</a></li>
-<li><a class="el" href="udp_multicast_protocol.html">LCM UDP Multicast Protocol Description</a></li>
-<li><a class="el" href="log_file_format.html">LCM Log File format</a></li>
-</ul>
-<h1>Publications</h1>
-<ul>
-<li><a href="http://people.csail.mit.edu/albert/pubs/2011-huang-teller-auro-preprint.pdf">LCM Overview</a> - Describes the design principles of LCM, the best place to start for a quick understanding of LCM. 6 pages.<ul>
-<li><em>IROS, Taipei, Taiwan, Oct 2010.</em></li>
-</ul>
-</li>
-<li><a href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf">Technical Report</a> - An expanded version of the overview, provides a more comprehensive description. 17 pages.<ul>
-<li><em>Technical Report MIT-CSAIL-TR-2009-041, Massachusetts Institute of Technology, 2009</em></li>
-</ul>
-</li>
-</ul>
-<h1><a class="anchor" id="main_other"></a>
-Application notes</h1>
-<ul>
-<li><a class="el" href="multicast_setup.html">UDP Multicast Setup</a></li>
-<li><a class="el" href="java_notes.html">Java application notes</a> </li>
-</ul>
-</div></div><!-- contents -->
+</div><!-- contents -->
 <hr class="footer"/></body>
 </html>

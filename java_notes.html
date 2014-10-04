@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>LCM: LCM documentation</title>
+<title>LCM: Java application notes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -57,7 +57,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,49 +71,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LCM documentation </div>  </div>
+<div class="title">Java application notes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="main_tutorials"></a>
-Tutorials and Instructions</h1>
-<ul>
-<li><a class="el" href="build_instructions.html">Build Instructions</a></li>
-<li><a class="el" href="tutorial_general.html">Tutorial</a></li>
-</ul>
-<h1><a class="anchor" id="main_api_ref"></a>
-API Reference</h1>
-<ul>
-<li><a class="el" href="group__LcmC.html">C</a></li>
-<li><a class="el" href="group__LcmCpp.html">C++</a></li>
-<li><a href="javadocs/index.html">Java</a></li>
-<li><a class="el" href="lua_api.html">Lua</a></li>
-<li><a href="python/index.html">Python</a></li>
-</ul>
-<h1>Specifications</h1>
-<ul>
-<li><a class="el" href="type_specification.html">LCM Type Specification Language</a></li>
-<li><a class="el" href="udp_multicast_protocol.html">LCM UDP Multicast Protocol Description</a></li>
-<li><a class="el" href="log_file_format.html">LCM Log File format</a></li>
-</ul>
-<h1>Publications</h1>
-<ul>
-<li><a href="http://people.csail.mit.edu/albert/pubs/2011-huang-teller-auro-preprint.pdf">LCM Overview</a> - Describes the design principles of LCM, the best place to start for a quick understanding of LCM. 6 pages.<ul>
-<li><em>IROS, Taipei, Taiwan, Oct 2010.</em></li>
-</ul>
-</li>
-<li><a href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf">Technical Report</a> - An expanded version of the overview, provides a more comprehensive description. 17 pages.<ul>
-<li><em>Technical Report MIT-CSAIL-TR-2009-041, Massachusetts Institute of Technology, 2009</em></li>
-</ul>
-</li>
-</ul>
-<h1><a class="anchor" id="main_other"></a>
-Application notes</h1>
-<ul>
-<li><a class="el" href="multicast_setup.html">UDP Multicast Setup</a></li>
-<li><a class="el" href="java_notes.html">Java application notes</a> </li>
-</ul>
+<div class="textblock"><h1>API docs</h1>
+<p>Java API documentation is maintained with Javadoc. To build the documentation, <a class="el" href="build_instructions.html">build LCM</a> and then run the script: </p>
+<pre class="fragment">$ lcm-java/make-javadocs.sh
+</pre><h1><a class="anchor" id="java_lcm_jar"></a>
+Finding lcm.jar</h1>
+<p>The core LCM Java implementation is built to <code>lcm.jar</code>. To use LCM in your application, <code>lcm.jar</code> must be in your Java classpath.</p>
+<p>On Linux, OS/X, and other UNIX-like systems, <code>lcm.jar</code> is typically built automatically and installed along with the rest of LCM. The exact location depends on the operating system and any configuration parameters, but it can often be found installed in <code>/usr/local/share/java/</code>.</p>
+<p>Separately, <code>lcm.jar</code> can also be found in the <code>lcm-java</code> subdirectory of the source distribution after compiling LCM from source.</p>
+<h1><a class="anchor" id="java_notes_separately"></a>
+Building lcm.jar separately from the rest of LCM</h1>
+<p>It is possible to build <code>lcm.jar</code> separately from the rest of LCM. The <code>lcm-java</code> subdirectory of the source distribution contains a <code>build.xml</code> file, which can be used with a build tool like Apache Ant or Eclipse.</p>
+<h1><a class="anchor" id="tut_java_namespace"></a>
+Namespace issues</h1>
+<p>LCM supports namespaces for data types, making it easier for users to use the types defined by others without worry that those types will conflict with other users' types.</p>
+<p>When defining a type, the name of the type can include a namespace, e.g., "struct examples.temperature_t { ... }". When compiled with lcm-gen, this will result in a class named "temperature_t" in package "examples". If lcm-gen is given the root of a source tree with the &ndash;jpath flag, it will automatically put temperature_t.class in the examples subdirectory. You will need to remember to import that type before you use it, e.g., "import examples.*", or else you will need to refer to types by their fully-qualified names (e.g., "new examples.temperature_t()").</p>
+<p>Note that if you do not specify a package name in your LCM type definition file, lcm-gen will (by default) put those types into the "lcmtypes" Java package. This is necessary because Java does not officially support packageless classes. </p>
 </div></div><!-- contents -->
 <hr class="footer"/></body>
 </html>

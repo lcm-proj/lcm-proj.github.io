@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>LCM: LCM documentation</title>
+<title>LCM: Tutorial</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -57,7 +57,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,49 +71,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LCM documentation </div>  </div>
+<div class="title">Tutorial </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="main_tutorials"></a>
-Tutorials and Instructions</h1>
+<div class="textblock"><p>An example use case from start to finish.</p>
+<h1><a class="anchor" id="tutorial_general_intro"></a>
+Introduction</h1>
+<p>LCM is a package designed to allow multiple processes to exchange messages in a safe and high-performance way. A <em>message</em> is the basic unit of LCM communications: it represents a self-contained piece of information. Messages are defined as programming language-independent data structures; the lcm-gen tool compiles these definitions into language-specific code.</p>
+<p>Each message is sent on a <em>channel</em>, which is identified by a human-readable name. For example, messages containing information about the temperature in the hallway might be published on the "HALLWAY_TEMPERATURE" channel. By convention, all messages on a channel have the same type.</p>
+<p>Any application can publish on any channel, although it is common for a single application serves as the sole source of data on a channel. Any application can receive data on any channel&mdash; for example, both a thermostat application and data logger might subscribe to the "HALLWAY_TEMPERATURE" channel.</p>
+<p>This tutorial will walk you through the main tasks for exchange messages between two applications:</p>
+<ol type="1">
+<li>Create a type definition</li>
+<li>Initialize LCM in your application</li>
+<li>Publish a message</li>
+<li>Subscribe to and receive a message</li>
+</ol>
+<p>Since the type definitions are language independent, the <a class="el" href="tut_lcmgen.html">first step</a> is the same for all programming languages.</p>
 <ul>
-<li><a class="el" href="build_instructions.html">Build Instructions</a></li>
-<li><a class="el" href="tutorial_general.html">Tutorial</a></li>
+<li><a class="el" href="tut_lcmgen.html">Step 1: Creating a type definition</a></li>
 </ul>
-<h1><a class="anchor" id="main_api_ref"></a>
-API Reference</h1>
+<p>The remaining steps vary across programming languages, consult the following sections for language-specific tutorials.</p>
 <ul>
-<li><a class="el" href="group__LcmC.html">C</a></li>
-<li><a class="el" href="group__LcmCpp.html">C++</a></li>
-<li><a href="javadocs/index.html">Java</a></li>
-<li><a class="el" href="lua_api.html">Lua</a></li>
-<li><a href="python/index.html">Python</a></li>
+<li><a class="el" href="tutorial_c.html">Steps 2-4: C</a></li>
+<li><a class="el" href="tut_cpp.html">Steps 2-4: C++</a></li>
+<li><a class="el" href="tut_dotnet.html">Steps 2-4: C# / .NET</a></li>
+<li><a class="el" href="tut_java.html">Steps 2-4: Java</a></li>
+<li><a class="el" href="tut_matlab.html">Steps 2-4: MATLAB</a></li>
+<li><a class="el" href="tut_python.html">Steps 2-4: Python</a></li>
+<li><a class="el" href="tut_lua.html">Steps 2-4: Lua</a></li>
 </ul>
-<h1>Specifications</h1>
-<ul>
-<li><a class="el" href="type_specification.html">LCM Type Specification Language</a></li>
-<li><a class="el" href="udp_multicast_protocol.html">LCM UDP Multicast Protocol Description</a></li>
-<li><a class="el" href="log_file_format.html">LCM Log File format</a></li>
-</ul>
-<h1>Publications</h1>
-<ul>
-<li><a href="http://people.csail.mit.edu/albert/pubs/2011-huang-teller-auro-preprint.pdf">LCM Overview</a> - Describes the design principles of LCM, the best place to start for a quick understanding of LCM. 6 pages.<ul>
-<li><em>IROS, Taipei, Taiwan, Oct 2010.</em></li>
-</ul>
-</li>
-<li><a href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf">Technical Report</a> - An expanded version of the overview, provides a more comprehensive description. 17 pages.<ul>
-<li><em>Technical Report MIT-CSAIL-TR-2009-041, Massachusetts Institute of Technology, 2009</em></li>
-</ul>
-</li>
-</ul>
-<h1><a class="anchor" id="main_other"></a>
-Application notes</h1>
-<ul>
-<li><a class="el" href="multicast_setup.html">UDP Multicast Setup</a></li>
-<li><a class="el" href="java_notes.html">Java application notes</a> </li>
-</ul>
+<p>Note that C and C++ are considered to be separate programming languages. It is possible to use the C bindings from C++, but there are also LCM bindings specific to C++. </p>
 </div></div><!-- contents -->
 <hr class="footer"/></body>
 </html>
