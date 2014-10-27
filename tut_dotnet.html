@@ -36,9 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Home</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -131,7 +129,7 @@ Initializing LCM</h1>
 </div><!-- fragment --><p>You can also instantiate the class and take care of the object's singularity by yourself:</p>
 <div class="fragment"><div class="line">LCM.LCM myLCM = <span class="keyword">new</span> LCM.LCM();</div>
 </div><!-- fragment --><p>In situations where the default connection URL (fetched by LCM from the environment variable <code>LCM_DEFAULT_URL</code> or defined by the constant <code>"udpm://239.255.76.67:7667"</code> when the former is empty) is not suitable, the constructor can accept variable number of parameters specifying individual connection strings.</p>
-<p>For detailed information on the LCM .NET API please see the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-dotnet/index.html">.NET API reference</a>.</p>
+<p>For detailed information on the LCM .NET API please see the <a href="lcm-dotnet/index.html">.NET API reference</a>.</p>
 <h1><a class="anchor" id="tut_dotnet_publish"></a>
 Publishing a message</h1>
 <p>In order to use LCM types, you can either build an assembly containing generated classes (needed when using LCM from other .NET language then C#), or include the classes directly to application project. Utilization of the generated classes is then fairly straightforward:</p>

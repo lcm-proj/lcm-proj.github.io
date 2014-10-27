@@ -36,9 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Home</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -80,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>Sending and receiving LCM messages with Java</p>
 <h1><a class="anchor" id="tut_java_intro"></a>
 Introduction</h1>
-<p>This tutorial will show you how to use all of the core functionality of LCM, and is intended for those who have a working knowledge of Java. For detailed information about LCM, please see the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/index.html">Java API reference</a>.</p>
+<p>This tutorial will show you how to use all of the core functionality of LCM, and is intended for those who have a working knowledge of Java. For detailed information about LCM, please see the <a href="javadocs/index.html">Java API reference</a>.</p>
 <p>The topics covered in this tutorial are:</p>
 <ul>
 <li>Initialize LCM in your application. </li>
@@ -99,7 +97,7 @@ Initializing LCM</h1>
 <p>You will need to make sure that <em>lcm.jar</em> is in your classpath, and your Java classes will need to include "import lcm.lcm.*".</p>
 <p>To initialize LCM, with default options, simply call:</p>
 <div class="fragment"><div class="line">LCM myLCM = LCM.getSingleton();</div>
-</div><!-- fragment --><p>The default options are suitable for communicating with other LCM applications on the local computer. For communication across computers, or other usages such as reading data from an LCM logfile (e.g., to post-process or analyze previously collected data), see the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/index.html">Java API reference</a>.</p>
+</div><!-- fragment --><p>The default options are suitable for communicating with other LCM applications on the local computer. For communication across computers, or other usages such as reading data from an LCM logfile (e.g., to post-process or analyze previously collected data), see the <a href="javadocs/index.html">Java API reference</a>.</p>
 <h1><a class="anchor" id="tut_java_publish"></a>
 Publishing a message</h1>
 <p>We can instantiate and then publish some sample data as follows:</p>
@@ -134,8 +132,7 @@ Publishing a message</h1>
 <p>The call to <code>lcm.publish()</code> serializes the data into a byte stream and transmits the packet using LCM to any interested receivers. The string <code>"EXAMPLE"</code> is the <em>channel</em> name, which is a string transmitted with each packet that identifies the contents to receivers. Receivers subscribe to different channels using this identifier, allowing uninteresting data to be discarded quickly and efficiently.</p>
 <h1><a class="anchor" id="tut_java_subscribe"></a>
 Subscribing to messages</h1>
-<p>In order to receive messages, you must implement an <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/lcm/lcm/LCMSubscriber.html">LCMSubscriber</a> and pass it to <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/lcm/lcm/LCM.html#subscribe(java.lang.String,
-lcm.lcm.LCMSubscriber)">LCM.subscribe()</a>. The subscriber will be provided with a LCMDataInputStream that can be read for the message contents. All LCM data types include a constructor that takes a DataInput (including instances of LCMDataInputStream) as an argument. First, let's look at the subscriber:</p>
+<p>In order to receive messages, you must implement an <a href="javadocs/lcm/lcm/LCMSubscriber.html">LCMSubscriber</a> and pass it to <a href="javadocs/lcm/lcm/LCM.html#subscribe%28java.lang.String, lcm.lcm.LCMSubscriber%29">LCM.subscribe()</a>. The subscriber will be provided with a LCMDataInputStream that can be read for the message contents. All LCM data types include a constructor that takes a DataInput (including instances of LCMDataInputStream) as an argument. First, let's look at the subscriber:</p>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>MySubscriber <span class="keyword">implements</span> LCMSubscriber</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> messageReceived(LCM lcm, String channel, LCMDataInputStream ins)</div>
@@ -155,7 +152,7 @@ lcm.lcm.LCMSubscriber)">LCM.subscribe()</a>. The subscriber will be provided wit
 <div class="line">}</div>
 </div><!-- fragment --><p>Next, we can subscribe to the message with:</p>
 <div class="fragment"><div class="line">lcm.subscriber(<span class="stringliteral">&quot;EXAMPLE&quot;</span>, <span class="keyword">new</span> MySubscriber());</div>
-</div><!-- fragment --><p>The LCM instance has a background thread that constantly listens for messages. When a message on channel <code>"EXAMPLE"</code> arrives, the LCM thread will invoke the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/lcm/lcm/LCMSubscriber.html#messageReceived(lcm.lcm.LCM, java.lang.String, lcm.lcm.LCMDataInputStream)">messageReceived()</a> method.</p>
+</div><!-- fragment --><p>The LCM instance has a background thread that constantly listens for messages. When a message on channel <code>"EXAMPLE"</code> arrives, the LCM thread will invoke the <a href="javadocs/lcm/lcm/LCMSubscriber.html#messageReceived%28lcm.lcm.LCM, java.lang.String, lcm.lcm.LCMDataInputStream%29">messageReceived()</a> method.</p>
 <h2><a class="anchor" id="tut_java_together"></a>
 Putting it all together</h2>
 <p>Here's an example of a complete subscriber application:</p>

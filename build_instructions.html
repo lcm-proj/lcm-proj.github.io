@@ -36,9 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Home</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -77,10 +75,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Build Instructions </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#build_released">Building a released version</a><ul><li class="level2"><a href="#build_ubuntu_debian">Ubuntu / Debian</a></li>
+<li class="level2"><a href="#build_osx">OS X</a><ul><li class="level3"><a href="#build_osx_macports">MacPorts</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#build_windows">Windows</a></li>
+<li class="level2"><a href="#build_other">Other / General</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#build_git">Building from Git</a><ul><li class="level2"><a href="#build_git_ubuntu_debian">Ubuntu / Debian</a></li>
+<li class="level2"><a href="#build_git_osx">OS X</a></li>
+<li class="level2"><a href="#build_git_windows">Windows</a></li>
+<li class="level2"><a href="#build_git_other">Other / General</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="textblock"><p>The process for building LCM may depend on whether you're building from a released version or from source control.</p>
-<h1>Building a released version</h1>
-<p>These instructions assume you've already downloaded a released of LCM. Replace X.Y.Z below with the specific version number you're building.</p>
-<h2>Ubuntu / Debian</h2>
+<h1><a class="anchor" id="build_released"></a>
+Building a released version</h1>
+<p>These instructions assume you've already downloaded a released version of LCM, available at:</p>
+<p><a href="https://github.com/lcm-proj/lcm/releases">https://github.com/lcm-proj/lcm/releases</a></p>
+<p>Replace X.Y.Z below with the specific version number you're building.</p>
+<h2><a class="anchor" id="build_ubuntu_debian"></a>
+Ubuntu / Debian</h2>
 <p>Required packages:</p>
 <ul>
 <li>build-essential</li>
@@ -89,19 +108,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Strongly recommended packages:</p>
 <ul>
 <li>openjdk-6-jdk</li>
+<li>ant</li>
 <li>python-dev</li>
 </ul>
 <p>From a terminal, run the following commands. </p>
-<pre class="fragment">$ wget http://lcm.googlecode.com/files/lcm-X.Y.Z.tar.gz
-$ tar xzf lcm-X.Y.Z.tar.gz
+<pre class="fragment">$ unzip lcm-X.Y.Z.zip
 $ cd lcm-X.Y.Z
 $ ./configure
 $ make
 $ sudo make install
 $ sudo ldconfig
-</pre><h2>OS/X</h2>
-<p>There are several ways to build LCM on OS/X, none of which are necessarily better than the others.</p>
-<h3>MacPorts</h3>
+</pre><h2><a class="anchor" id="build_osx"></a>
+OS X</h2>
+<p>There are several ways to build LCM on OS X, none of which are necessarily better than the others.</p>
+<h3><a class="anchor" id="build_osx_macports"></a>
+MacPorts</h3>
 <p>Required packages:</p>
 <ul>
 <li>glib2</li>
@@ -109,16 +130,17 @@ $ sudo ldconfig
 <p>Strongly recommended packages:</p>
 <ul>
 <li>openjdk6</li>
+<li>ant</li>
 <li>python26 or python27</li>
 </ul>
 <p>From a terminal, run the following commands. Replace X.Y.Z with the latest version of LCM. </p>
-<pre class="fragment">$ wget http://lcm.googlecode.com/files/lcm-X.Y.Z.tar.gz
-$ tar xzf lcm-X.Y.Z.tar.gz
+<pre class="fragment">$ unzip lcm-X.Y.Z.zip
 $ cd lcm-X.Y.Z
 $ ./configure
 $ make
 $ sudo make install
-</pre><h2>Windows</h2>
+</pre><h2><a class="anchor" id="build_windows"></a>
+Windows</h2>
 <p>Requirements:</p>
 <ul>
 <li>GLib for Windows (<a href="http://www.gtk.org">http://www.gtk.org</a>). You'll need the following packages<ul>
@@ -132,10 +154,13 @@ $ sudo make install
 <li>Follow the instructions in WinSpecific/README.txt to setup GLib.</li>
 <li>Open WinSpecific/LCM.sln in MS Visual Studio and build the solution.</li>
 </ol>
-<h2>Other / General</h2>
+<h2><a class="anchor" id="build_other"></a>
+Other / General</h2>
 <p>On other POSIX.1-2001 systems (e.g., other GNU/Linux distributions, FreeBSD, Solaris, etc.) the only major requirement is to install the GLib 2.x development files. If possible, a Java development kit and Python should also be installed. Then follow the</p>
-<h1>Building from Git</h1>
-<h2>Ubuntu / Debian</h2>
+<h1><a class="anchor" id="build_git"></a>
+Building from Git</h1>
+<h2><a class="anchor" id="build_git_ubuntu_debian"></a>
+Ubuntu / Debian</h2>
 <p>Required packages:</p>
 <ul>
 <li>build-essential</li>
@@ -149,19 +174,24 @@ $ sudo make install
 <p>Strongly recommended packages:</p>
 <ul>
 <li>openjdk-6-jdk</li>
+<li>ant</li>
 <li>python-dev</li>
 </ul>
 <p>From a terminal, run the following commands. </p>
-<pre class="fragment">$ git clone https://code.google.com/p/lcm lcm
+<pre class="fragment">$ git clone https://github.com/lcm-proj/lcm lcm
 $ cd lcm
 $ ./bootstrap.sh
 $ ./configure
 $ make
-</pre><h2>OS/X</h2>
+$ sudo make install
+</pre><h2><a class="anchor" id="build_git_osx"></a>
+OS X</h2>
 <p><em>TODO</em></p>
-<h2>Windows</h2>
+<h2><a class="anchor" id="build_git_windows"></a>
+Windows</h2>
 <p>Same as building from a released version, as above.</p>
-<h2>Other / General</h2>
+<h2><a class="anchor" id="build_git_other"></a>
+Other / General</h2>
 <p>To build from Git in other GNU/Linux distributions, FreeBSD, Solaris, etc., you'll need to install autotools. Then follow the terminal commands shown above for Ubuntu. </p>
 </div></div><!-- contents -->
 <hr class="footer"/></body>

@@ -36,9 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Home</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -98,7 +96,7 @@ Initializing LCM</h1>
 <div class="fragment"><div class="line"><span class="keyword">import</span> lcm</div>
 <div class="line"></div>
 <div class="line">lc = lcm.LCM()</div>
-</div><!-- fragment --><p>The primary communications functionality is contained in the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-python/lcm.LCM-class.html">lcm.LCM</a> class. The constructor initializes communications resources, and has a single optional argument. If no argument is given, as above, then the LCM instance is initialized to reasonable defaults, which are suitable for communicating with other LCM applications on the local computer. The argument can also be a string specifying the underlying communications mechanisms. The LCM Python class itself is a wrapper around the C LCM library, so for information on setting the class up for communication across computers, or other usages such as reading data from an LCM logfile (e.g., to post-process or analyze previously collected data), see the documentation for <a class="el" href="group__LcmC__lcm__t.html#gaf29963ef43edadf45296d5ad82c18d4b">lcm_create()</a>.</p>
+</div><!-- fragment --><p>The primary communications functionality is contained in the <a href="python/lcm.LCM-class.html">lcm.LCM</a> class. The constructor initializes communications resources, and has a single optional argument. If no argument is given, as above, then the LCM instance is initialized to reasonable defaults, which are suitable for communicating with other LCM applications on the local computer. The argument can also be a string specifying the underlying communications mechanisms. The LCM Python class itself is a wrapper around the C LCM library, so for information on setting the class up for communication across computers, or other usages such as reading data from an LCM logfile (e.g., to post-process or analyze previously collected data), see the documentation for <a class="el" href="group__LcmC__lcm__t.html#gaf29963ef43edadf45296d5ad82c18d4b">lcm_create()</a>.</p>
 <p>If an error occurs initializing LCM, then an IOError is raised.</p>
 <h1><a class="anchor" id="tut_python_publishing"></a>
 Publishing a message</h1>
@@ -130,7 +128,7 @@ Publishing a message</h1>
 <div class="line">lc.publish(&quot;EXAMPLE&quot;, msg.encode())</div>
 </div><!-- fragment --><p>The full example is available in runnable form as <code>examples/python/send_message.py</code> in the LCM source distribution.</p>
 <p>For the most part, this example should be pretty straightforward. The application creates a message, fills in the message data fields, then initializes LCM and publishes the message.</p>
-<p>The call to <a href="http://lcm.googlecode.com/svn/www/reference/lcm-python/lcm.LCM-class.html#publish">lcm.publish()</a> serializes the data into a byte stream and transmits the packet to any interested receivers. The string <code>"EXAMPLE"</code> is the <em>channel</em> name, which is a string transmitted with each packet that identifies the contents to receivers. Receivers subscribe to different channels using this identifier, allowing uninteresting data to be discarded quickly and efficiently.</p>
+<p>The call to <a href="python/lcm.LCM-class.html#publish">lcm.publish()</a> serializes the data into a byte stream and transmits the packet to any interested receivers. The string <code>"EXAMPLE"</code> is the <em>channel</em> name, which is a string transmitted with each packet that identifies the contents to receivers. Receivers subscribe to different channels using this identifier, allowing uninteresting data to be discarded quickly and efficiently.</p>
 <h1><a class="anchor" id="tut_python_receive"></a>
 Receiving LCM Messages</h1>
 <p>As discussed above, each LCM message is transmitted with an attached channel name. You can use these channel names to determine which LCM messages your application receives, by subscribing to the channels of interest. It is important for senders and receivers to agree on the channel names which will be used for each message type.</p>
@@ -158,9 +156,9 @@ Receiving LCM Messages</h1>
 <div class="line">except KeyboardInterrupt:</div>
 <div class="line">    pass</div>
 </div><!-- fragment --><p>The full example is available in runnable form as <code>examples/python/listener.py</code> in the LCM source distribution.</p>
-<p>After initializing the LCM object, the application subscribes to a channel by passing a callback function to the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-python/lcm.LCM-class.html#subscribe">lcm.subscribe</a> method.</p>
-<p>The example application then repeatedly calls <a href="http://lcm.googlecode.com/svn/www/reference/lcm-python/lcm.LCM-class.html#handle">lcm.handle</a>, which simply waits for a message of interest to arrive and then invokes the appropriate callback functions. Callbacks are invoked one at a time, so there is no need for thread synchronization.</p>
-<p>If your application has other work to do while waiting for messages (e.g., print out a message every few seconds or check for input somewhere else), you can use the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-python/lcm.LCM-class.html#handle">lcm.fileno</a> method to obtain a file descriptor. This file descriptor can then be used in conjunction with the Python select module or some other event loop to check when LCM messages have arrived. See <code>examples/python/listener_select.py</code> in the LCM source distribution for an example. </p>
+<p>After initializing the LCM object, the application subscribes to a channel by passing a callback function to the <a href="python/lcm.LCM-class.html#subscribe">lcm.subscribe</a> method.</p>
+<p>The example application then repeatedly calls <a href="python/lcm.LCM-class.html#handle">lcm.handle</a>, which simply waits for a message of interest to arrive and then invokes the appropriate callback functions. Callbacks are invoked one at a time, so there is no need for thread synchronization.</p>
+<p>If your application has other work to do while waiting for messages (e.g., print out a message every few seconds or check for input somewhere else), you can use the <a href="python/lcm.LCM-class.html#handle">lcm.fileno</a> method to obtain a file descriptor. This file descriptor can then be used in conjunction with the Python select module or some other event loop to check when LCM messages have arrived. See <code>examples/python/listener_select.py</code> in the LCM source distribution for an example. </p>
 </div></div><!-- contents -->
 <hr class="footer"/></body>
 </html>

@@ -36,9 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Home</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -105,7 +103,7 @@ Setting up MATLAB to use LCM</h1>
 Initializing LCM</h1>
 <p>You can initialize LCM from MATLAB as follows:</p>
 <div class="fragment"><div class="line">lc = lcm.lcm.LCM.getSingleton();</div>
-</div><!-- fragment --><p>The <code>lc</code> object now contains the communications context and interface for LCM. Since we're simply calling into the Java API here, see the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/index.html">Java API documentation</a> for other ways on setting up LCM.</p>
+</div><!-- fragment --><p>The <code>lc</code> object now contains the communications context and interface for LCM. Since we're simply calling into the Java API here, see the <a href="javadocs/index.html">Java API documentation</a> for other ways on setting up LCM.</p>
 <h1><a class="anchor" id="tut_matlab_publishing"></a>
 Publishing a message</h1>
 <p>We can instantiate and publish some sample data as follows:</p>
@@ -155,10 +153,10 @@ Receiving LCM Messages</h1>
 <div class="line">disp([ &#39;ranges:      &#39; sprintf(&#39;%f &#39;, m.ranges) ])</div>
 <div class="line">disp([ &#39;name:        &#39; m.name) ])</div>
 <div class="line">disp([ &#39;enabled:     &#39; sprintf(&#39;%d &#39;, m.enabled) ])</div>
-</div><!-- fragment --><p>After initializing the LCM object, the application creates a <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/lcm/lcm/MessageAggregator.html">MessageAggregator</a> and subscribes it to the <code>'EXAMPLE'</code> channel. The sole purpose of the message aggregator is to receive messages on that channel and queue them up for later handling. This is different from how messages would normally be handled in Java, as MATLAB is not well suited to callback functions or multiple threads.</p>
-<p>The example application then repeatedly calls <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/lcm/lcm/MessageAggregator.html#getNextMessage(long)">MessageAggregator.getNextMessage()</a> which simply waits for a message of interest to arrive and then returns the raw data.</p>
+</div><!-- fragment --><p>After initializing the LCM object, the application creates a <a href="javadocs/lcm/lcm/MessageAggregator.html">MessageAggregator</a> and subscribes it to the <code>'EXAMPLE'</code> channel. The sole purpose of the message aggregator is to receive messages on that channel and queue them up for later handling. This is different from how messages would normally be handled in Java, as MATLAB is not well suited to callback functions or multiple threads.</p>
+<p>The example application then repeatedly calls <a href="javadocs/lcm/lcm/MessageAggregator.html#getNextMessage%28%29">MessageAggregator.getNextMessage()</a> which simply waits for a message of interest to arrive and then returns the raw data.</p>
 <p>Once a message has arrived, the application decodes it by passing <code>msg.data</code> to the constructor for the example message type, and displays some message fields.</p>
-<p>For more information on how to use the <a href="http://lcm.googlecode.com/svn/www/reference/lcm-java/lcm/lcm/MessageAggregator.html">MessageAggregator</a>, see the API documentation. This includes configuring messsaging limits such as a maximum number of messages to queue up to avoid falling behind real-time.</p>
+<p>For more information on how to use the <a href="javadocs/lcm/lcm/MessageAggregator.html">MessageAggregator</a>, see the API documentation. This includes configuring messsaging limits such as a maximum number of messages to queue up to avoid falling behind real-time.</p>
 <p>The full example is available in runnable form in the <code>examples/matlab</code> directory in the LCM source distribution. </p>
 </div></div><!-- contents -->
 <hr class="footer"/></body>
