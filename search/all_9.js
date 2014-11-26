@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lcm_20documentation',['LCM documentation',['../index.html',1,'']]],
+  ['lightweight_20communications_20and_20marshalling_20_28lcm_29',['Lightweight Communications and Marshalling (LCM)',['../index.html',1,'']]],
   ['lcm',['LCM',['../classlcm_1_1LCM.html',1,'lcm']]],
   ['lcm',['lcm',['../struct__lcm__recv__buf__t.html#a327dabe1ca64b12cafe7e7a8f6650482',1,'_lcm_recv_buf_t::lcm()'],['../classlcm_1_1LCM.html#a18f8e2693cdafb36c4481789aa8ec24e',1,'lcm::LCM::LCM(std::string lcm_url=&quot;&quot;)'],['../classlcm_1_1LCM.html#a705349fd49d7321379bd5d0065d6c19a',1,'lcm::LCM::LCM(lcm_t *lcm_in)']]],
   ['lcm_5fcreate',['lcm_create',['../group__LcmC__lcm__t.html#gaf29963ef43edadf45296d5ad82c18d4b',1,'lcm.h']]],
