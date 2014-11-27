@@ -81,7 +81,8 @@ Quick links</h1>
 <ul>
 <li><a href="https://github.com/lcm-proj/lcm/releases">Downloads</a></li>
 <li><a class="el" href="build_instructions.html">Build Instructions</a></li>
-<li><a class="el" href="tutorial_general.html">Tutorial</a></li>
+<li><a class="el" href="tutorial_general.html">Tutorial and examples</a></li>
+<li><a href="https://github.com/lcm-proj/lcm">GitHub site</a></li>
 </ul>
 <h1>Features</h1>
 <ul>
@@ -93,7 +94,7 @@ Quick links</h1>
 <li>No daemons</li>
 <li>Few dependencies</li>
 </ul>
-<h1>Supported platforms / languages</h1>
+<h2>Supported platforms / languages</h2>
 <ul>
 <li>Platforms:<ul>
 <li>GNU/Linux</li>
@@ -123,54 +124,29 @@ API Reference</h1>
 <li><a class="el" href="lua_api.html">Lua</a></li>
 <li><a href="python/index.html">Python</a></li>
 </ul>
-<h1>Specifications</h1>
+<h1>Additional resources</h1>
 <ul>
 <li><a class="el" href="type_specification.html">LCM Type Specification Language</a></li>
 <li><a class="el" href="udp_multicast_protocol.html">LCM UDP Multicast Protocol Description</a></li>
 <li><a class="el" href="log_file_format.html">LCM Log File format</a></li>
+<li><a href="http://groups.google.com/group/lcm-users">User mailing list</a></li>
+<li><a href="http://groups.google.com/group/lcm-dev">Developer mailing list</a></li>
 </ul>
-<h1>Examples</h1>
-<p>Simple examples are provided with the source distribution of LCM.</p>
-<p>For each language, at least two examples are provided. One listens for a message, the other transmits a message. The LCM type used is defined in <a href="https://github.com/lcm-proj/lcm/blob/master/examples/types/example_t.lcm">example_t.lcm</a> (<code>examples/types/example_t.lcm</code> in the source distribution).</p>
-<p>Additional examples are distributed with the LCM source in the <code>examples/</code> directory.</p>
-<table class="doxtable">
-<tr>
-<th>Language </th><th>Listener </th><th>Transmitter  </th></tr>
-<tr>
-<td>C </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/c/listener.c">listener.c</a> <br/>
-<a href="https://github.com/lcm-proj/lcm/blob/master/examples/c/listener-async.c">listener-async.c</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/c/send_message.c">send_message.c</a> </td></tr>
-<tr>
-<td>C++ </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/cpp/listener.cpp">listener.cpp</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/cpp/send_message.cpp">send_message.cpp</a> </td></tr>
-<tr>
-<td>C# </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/csharp/example_t_demo/example_t_display.cs">example_t_display.cs</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/csharp/example_t_demo/example_t_transmit.cs">example_t_transmit.cs</a> </td></tr>
-<tr>
-<td>Java </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/java/example_t_demo/MySubscriber.java">MySubscriber.java</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/java/example_t_demo/SendMessage.java">SendMessage.java</a> </td></tr>
-<tr>
-<td>Lua </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/lua/listener.lua">listener.lua</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/lua/send-message.lua">send-message.lua</a> </td></tr>
-<tr>
-<td>MATLAB </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/matlab/listener.m">listener.m</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/matlab/sendmessage.m">sendmessage.m</a> </td></tr>
-<tr>
-<td>Python </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/python/listener.py">listener.py</a> </td><td><a href="https://github.com/lcm-proj/lcm/blob/master/examples/python/send-message.py">send-message.py</a> </td></tr>
-</table>
-<h1>Publications</h1>
+<h2>Publications and application notes</h2>
 <ul>
-<li><a href="http://people.csail.mit.edu/albert/pubs/2010-huang-olson-moore-lcm-iros.pdf">LCM Overview</a> - Describes the design principles of LCM, the best place to start for a quick understanding of LCM. 6 pages.<ul>
+<li><a href="http://people.csail.mit.edu/albert/pubs/2010-huang-olson-moore-lcm-iros.pdf">LCM Overview</a> - Describes the design principles of LCM, the best place to start for a quick understanding of LCM. 6 pages (PDF).<ul>
 <li><em>IROS, Taipei, Taiwan, Oct 2010.</em></li>
 </ul>
 </li>
-<li><a href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf">Technical Report</a> - An expanded version of the overview, provides a more comprehensive description. 17 pages.<ul>
+<li><a href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf">Technical Report</a> - An expanded version of the overview, provides a more comprehensive description. 17 pages (PDF).<ul>
 <li><em>Technical Report MIT-CSAIL-TR-2009-041, Massachusetts Institute of Technology, 2009</em></li>
 </ul>
 </li>
-</ul>
-<h1><a class="anchor" id="main_other"></a>
-Application notes</h1>
-<ul>
 <li><a class="el" href="multicast_setup.html">UDP Multicast Setup</a></li>
 <li><a class="el" href="java_notes.html">Java application notes</a></li>
 </ul>
 <h1>Who uses LCM?</h1>
-<p>LCM was originally developed for the MIT DARPA Urban Challenge team, and has since been used in many robotic and autonomous systems. Its users have included:</p>
+<p>LCM was originally developed in 2006 for the MIT DARPA Urban Challenge team, and has since been used in many robotic and autonomous systems, in both research and production environments. Its users have included:</p>
 <ul>
 <li>BAE Systems</li>
 <li>Bender Robotics</li>
