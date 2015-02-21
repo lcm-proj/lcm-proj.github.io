@@ -115,6 +115,18 @@ Kernel UDP receive buffer sizing</h1>
 <td>Linux </td><td><code>sysctl -w net.core.rmem_max=2097152</code> </td><td><code>sysctl -w net.core.rmem_default=2097152</code> </td></tr>
 <tr>
 <td>OS/X, FreeBSD, etc. </td><td><code>sysctl -w kern.ipc.maxsockbuf=2097152</code> </td><td>??  </td></tr>
+<tr>
+<td>Windows </td><td></td><td><p class="starttd">Set registry keys: </p>
+<pre>
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\AFD\Parameters]
+"DefaultReceiveWindow"=dword:00200000
+"DefaultSendWindow"=dword:00200000
+</pre><p class="endtd">See also:</p>
+<ol type="1">
+<li><a href="https://technet.microsoft.com/en-us/library/bb726981.aspx#EBAA">https://technet.microsoft.com/en-us/library/bb726981.aspx#EBAA</a></li>
+<li><a href="http://stackoverflow.com/questions/18985816/change-default-socket-buffer-size-under-windows">http://stackoverflow.com/questions/18985816/change-default-socket-buffer-size-under-windows</a>   </li>
+</ol>
+</td></tr>
 </table>
 <p>Most GNU/Linux distributions also allow setting these permanently using the file <code>/etc/sysctl.conf</code>. To do this, add the following lines into the file somewhere:</p>
 <pre class="fragment">    net.core.rmem_max=2097152
