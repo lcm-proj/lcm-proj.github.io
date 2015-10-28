@@ -135,9 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa18a362fee1eae7e84387eea98c2575f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#aa18a362fee1eae7e84387eea98c2575f">subscribeFunction</a> (const std::string &amp;channel, void(*handler)(const <a class="el" href="structlcm_1_1ReceiveBuffer.html">ReceiveBuffer</a> *rbuf, const std::string &amp;channel, ContextClass context), ContextClass context)</td></tr>
 <tr class="memdesc:aa18a362fee1eae7e84387eea98c2575f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe a function callback to a channel, without automatic message decoding.  <a href="#aa18a362fee1eae7e84387eea98c2575f">More...</a><br /></td></tr>
 <tr class="separator:aa18a362fee1eae7e84387eea98c2575f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a037fd43df90eaaafcefdbad0955d161e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#a037fd43df90eaaafcefdbad0955d161e">unsubscribe</a> (<a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *subscription)</td></tr>
-<tr class="memdesc:a037fd43df90eaaafcefdbad0955d161e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes a message handler.  <a href="#a037fd43df90eaaafcefdbad0955d161e">More...</a><br /></td></tr>
-<tr class="separator:a037fd43df90eaaafcefdbad0955d161e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b48c70992c4d0c36d782208ca4dd93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#ac9b48c70992c4d0c36d782208ca4dd93">unsubscribe</a> (<a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *subscription)</td></tr>
+<tr class="memdesc:ac9b48c70992c4d0c36d782208ca4dd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes a message handler.  <a href="#ac9b48c70992c4d0c36d782208ca4dd93">More...</a><br /></td></tr>
+<tr class="separator:ac9b48c70992c4d0c36d782208ca4dd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6221cd1f4c6ed608a1cf8cfb38cafedb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__LcmC__lcm__t.html#gabb730c9e49442a4bcf400e0f2fef7576">lcm_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#a6221cd1f4c6ed608a1cf8cfb38cafedb">getUnderlyingLCM</a> ()</td></tr>
 <tr class="memdesc:a6221cd1f4c6ed608a1cf8cfb38cafedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrives the lcm_t C data structure wrapped by this class.  <a href="#a6221cd1f4c6ed608a1cf8cfb38cafedb">More...</a><br /></td></tr>
 <tr class="separator:a6221cd1f4c6ed608a1cf8cfb38cafedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -727,7 +727,7 @@ template&lt;class ContextClass &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a037fd43df90eaaafcefdbad0955d161e"></a>
+<a class="anchor" id="ac9b48c70992c4d0c36d782208ca4dd93"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -735,7 +735,7 @@ template&lt;class ContextClass &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void lcm::LCM::unsubscribe </td>
+          <td class="memname">int lcm::LCM::unsubscribe </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *&#160;</td>
           <td class="paramname"><em>subscription</em></td><td>)</td>
@@ -753,10 +753,11 @@ template&lt;class ContextClass &gt; </div>
 <p>After unsubscription, the callback registered by the original call to <a class="el" href="classlcm_1_1LCM.html#a1a71519b8fb0f942b385a60b70f87baf" title="Subscribes a callback method of an object to a channel, with automatic message decoding. ">subscribe()</a> or <a class="el" href="classlcm_1_1LCM.html#a207638f92682307b200e0132a4639430" title="Subscribe a function callback to a channel, with automatic message decoding. ">subscribeFunction()</a> will no longer be invoked when messages are received. The <a class="el" href="classlcm_1_1Subscription.html" title="Represents a channel subscription, and can be used to unsubscribe and set options. ">Subscription</a> object is destroyed by this method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">subscription</td><td>a <a class="el" href="classlcm_1_1Subscription.html" title="Represents a channel subscription, and can be used to unsubscribe and set options. ">Subscription</a> object previously returned by a call to <a class="el" href="classlcm_1_1LCM.html#a1a71519b8fb0f942b385a60b70f87baf" title="Subscribes a callback method of an object to a channel, with automatic message decoding. ">subscribe()</a> or <a class="el" href="classlcm_1_1LCM.html#a207638f92682307b200e0132a4639430" title="Subscribe a function callback to a channel, with automatic message decoding. ">subscribeFunction()</a>. </td></tr>
+    <tr><td class="paramname">subscription</td><td>a <a class="el" href="classlcm_1_1Subscription.html" title="Represents a channel subscription, and can be used to unsubscribe and set options. ">Subscription</a> object previously returned by a call to <a class="el" href="classlcm_1_1LCM.html#a1a71519b8fb0f942b385a60b70f87baf" title="Subscribes a callback method of an object to a channel, with automatic message decoding. ">subscribe()</a> or <a class="el" href="classlcm_1_1LCM.html#a207638f92682307b200e0132a4639430" title="Subscribe a function callback to a channel, with automatic message decoding. ">subscribeFunction()</a>.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 if <code>subscription</code> is not a valid subscription. </dd></dl>
 
 </div>
 </div>

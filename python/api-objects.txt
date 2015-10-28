@@ -10,6 +10,7 @@ lcm.EventLog.close	lcm.EventLog-class.html#close
 lcm.EventLog.seek	lcm.EventLog-class.html#seek
 lcm.EventLog.__init__	lcm.EventLog-class.html#__init__
 lcm.EventLog.size	lcm.EventLog-class.html#size
+lcm.EventLog.seek_to_timestamp	lcm.EventLog-class.html#seek_to_timestamp
 lcm.EventLog.next	lcm.EventLog-class.html#next
 lcm.EventLog.tell	lcm.EventLog-class.html#tell
 lcm.EventLog.__next__	lcm.EventLog-class.html#__next__

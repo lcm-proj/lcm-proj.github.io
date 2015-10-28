@@ -78,9 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#build_released">Building a released version</a><ul><li class="level2"><a href="#build_ubuntu_debian">Ubuntu / Debian</a></li>
-<li class="level2"><a href="#build_osx">OS X</a><ul><li class="level3"><a href="#build_osx_macports">MacPorts</a></li>
-</ul>
-</li>
+<li class="level2"><a href="#build_osx">OS X</a></li>
 <li class="level2"><a href="#build_windows">Windows</a></li>
 <li class="level2"><a href="#build_other">Other / General</a></li>
 </ul>
@@ -118,20 +116,14 @@ $ sudo ldconfig
 </pre><h2><a class="anchor" id="build_osx"></a>
 OS X</h2>
 <p>There are several ways to build LCM on OS X, none of which are necessarily better than the others.</p>
-<h3><a class="anchor" id="build_osx_macports"></a>
-MacPorts</h3>
-<p>Required packages:</p><ul>
-<li>glib2</li>
-</ul>
-<p>Strongly recommended packages:</p><ul>
-<li>openjdk6</li>
-<li>python26 or python27</li>
-</ul>
-<p>From a terminal, run the following commands. Replace X.Y.Z with the latest version of LCM. </p><pre class="fragment">$ unzip lcm-X.Y.Z.zip
+<h3>Homebrew</h3>
+<p>Install Homebrew packages </p><pre class="fragment">$ brew install glib pkg-config
+</pre><p>Install Java. Type <code>javac</code> in a terminal, then follow the instructions</p>
+<p>Download and build LCM </p><pre class="fragment">$ unzip lcm-X.Y.Z.zip
 $ cd lcm-X.Y.Z
 $ ./configure
 $ make
-$ sudo make install
+$ make install
 </pre><h2><a class="anchor" id="build_windows"></a>
 Windows</h2>
 <p>Requirements:</p><ul>
@@ -172,8 +164,16 @@ $ make
 $ sudo make install
 </pre><h2><a class="anchor" id="build_git_osx"></a>
 OS X</h2>
-<p><em>TODO</em></p>
-<h2><a class="anchor" id="build_git_windows"></a>
+<h3>Homebrew</h3>
+<p>Install Homebrew packages </p><pre class="fragment">$ brew install glib pkg-config automake libtool
+</pre><p>Install Java. Type <code>javac</code> in a terminal, then follow the instructions</p>
+<p>Download and build LCM </p><pre class="fragment">$ git clone https://github.com/lcm-proj/lcm lcm
+$ cd lcm
+$ ./bootstrap.sh
+$ ./configure
+$ make
+$ make install
+</pre><h2><a class="anchor" id="build_git_windows"></a>
 Windows</h2>
 <p>Same as building from a released version, as above.</p>
 <h2><a class="anchor" id="build_git_other"></a>
