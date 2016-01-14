@@ -89,6 +89,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li class="level2"><a href="#build_git_other">Other / General</a></li>
 </ul>
 </li>
+<li class="level1"><a href="#build_post">Post Install</a><ul><li class="level2"><a href="#build_post_linux">Linux</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="textblock"><p>The process for building LCM may depend on whether you're building from a released version or from source control.</p>
@@ -179,6 +182,22 @@ Windows</h2>
 <h2><a class="anchor" id="build_git_other"></a>
 Other / General</h2>
 <p>To build from Git in other GNU/Linux distributions, FreeBSD, Solaris, etc., you'll need to install autotools. Then follow the terminal commands shown above for Ubuntu. </p>
+<h1><a class="anchor" id="build_post"></a>
+Post Install</h1>
+<h2><a class="anchor" id="build_post_linux"></a>
+Linux</h2>
+<p>Some Linux distributions, such as Arch, do not contain the default install location (<code>/usr/local/lib</code>) in the <code>ld.so.conf</code> search path. In this case, create a <code>ld.so.conf</code> file for lcm:</p>
+<pre class="fragment">$ export LCM_INSTALL_DIR=/usr/local/lib
+$ echo $LCM_INSTALL_DIR > /etc/ld.so.conf.d/lcm.conf</pre>
+<p>In addition, <code>pkgconfig</code> can be configured to find lcm.pc.</p>
+<pre class="fragment">$ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$LCM_INSTALL_DIR/pkgconfig</pre>
+<p>Python users may need to add the lcm install location to Python's site packages search path using a .pth file.</p>
+<pre class="fragment">$ export PYTHON_VERSION=$(python -c "import sys; print(\"%s.%s\" % sys.version_info[:2])")
+$ export PYTHON_USER_SITE=$(python -m site --user-site)
+$ echo "$LCM_INSTALL_DIR/python$PYTHON_VERSION/site-packages" > $PYTHON_USER_SITE/lcm.pth</pre>
+<p>Lua users may need to add to <code>LUA_CPATH</code></p>
+<pre class="fragment">$ export LUA_VERSION=$(lua -e "print(string.sub(_VERSION, 5))")
+$ export LUA_CPATH=$LUA_CPATH:$LCM_INSTALL_DIR/lua/$LUA_VERSION/?.so</pre>
 </div></div><!-- contents -->
 <hr class="footer"/></body>
 </html>
