@@ -192,44 +192,47 @@ $ make install
 Windows</h2>
 <p>Building:</p>
 <ol>
-  <li>Install dependencies</li>
-  <ol>
-    <li>Install Python (64bit)</li>
-    <li>Install Python Path to environment variable PATH</li>
-    <li>Install Git</li>
-    <li>Install Cmake</li>
-    <li>Install MSYS2</li>
-    <li>Open MSYS shell (64bit) and install:
-      <ol>
-        <li>pacman -S base-devel</li>
-        <li>pacman -S gcc</li>
-        <li>pacman -S glib2 glib2-devel mingw-w64-x86_64-glib2</li>
-      </ol>
-    </li>
-    <li>Add
-      <msys2_root>\mingw64\bin to windows system PATH</li>
-    <li>Define GLIB_PATH environment variable: GLIB_PATH=
-      <msys2_root>\mingw64</li>
-    <li>Clone LCM git clone https://github.com/lcm-proj/lcm.git</li>
-  </ol>
+  <li>Install dependencies
+    <ol type="A">
+      <li>Install Python (64bit)</li>
+      <li>Install Python Path to environment variable PATH</li>
+      <li>Install Git</li>
+      <li>Install Cmake</li>
+      <li>Install MSYS2</li>
+      <li>Open MSYS shell (64bit) and install:
+        <ol type="a">
+          <li>pacman -S base-devel</li>
+          <li>pacman -S gcc</li>
+          <li>pacman -S glib2 glib2-devel mingw-w64-x86_64-glib2</li>
+        </ol>
+      </li>
+      <li>Add
+        <msys2_root>\mingw64\bin to windows system PATH</li>
+      <li>Define GLIB_PATH environment variable: GLIB_PATH=
+        <msys2_root>\mingw64</li>
+      <li>Clone LCM git clone https://github.com/lcm-proj/lcm.git</li>
+    </ol>
+  </li>
 
-  <li>Build LCM:</li>
-  <ol>
-    <li>Open CMD as administrator</li>
-    <li>cd into cloned lcm repository</li>
-    <li>mkdir build</li>
-    <li>cd build</li>
-    <li>cmake .. -G"Visual Studio
-      <Installed Version>
-        <Year of Version> Win64" -DCMAKE_BUILD_TYPE=Release -DLCM_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=
-          <Install_Path> -DGLIB2_GLIBCONFIG_INCLUDE_DIR="C:\msys64\mingw64\lib\glib-2.0\include" -DGLIB2_GLIB_INCLUDE_DIR="C:\msys64\mingw64\include\glib-2.0"
-            -DGLIB2_GLIB_LIBRARY="C:\msys64\mingw64\lib\libglib-2.0.dll.a" -DGLIB2_GLIB_RUNTIME="C:\msys64\mingw64\bin\libglib-2.0.dll"</li>
-  </ol>
-  <li>Install lcm</li>
-    <ol>
+  <li>Build LCM:
+    <ol type="A">
+      <li>Open CMD as administrator</li>
+      <li>cd into cloned lcm repository</li>
+      <li>mkdir build</li>
+      <li>cd build</li>
+      <li>cmake .. -G"Visual Studio
+        <Installed Version>
+          <Year of Version> Win64" -DCMAKE_BUILD_TYPE=Release -DLCM_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=
+            <Install_Path> -DGLIB2_GLIBCONFIG_INCLUDE_DIR="C:\msys64\mingw64\lib\glib-2.0\include" -DGLIB2_GLIB_INCLUDE_DIR="C:\msys64\mingw64\include\glib-2.0"
+              -DGLIB2_GLIB_LIBRARY="C:\msys64\mingw64\lib\libglib-2.0.dll.a" -DGLIB2_GLIB_RUNTIME="C:\msys64\mingw64\bin\libglib-2.0.dll"</li>
+    </ol>
+  </li>
+  <li>Install lcm
+    <ol type="A">
       <li>cmake --build path/to/your/build/dir --config Release --target install or --config Debug</li>
       <li>set PYTHONPATH pointing to Install_Path/lib/sitepackages --> python import lcm working!!</li>
     </ol>
+  </li>
 </ol>
 <h2><a class="anchor" id="build_git_other"></a>
 Other / General</h2>
