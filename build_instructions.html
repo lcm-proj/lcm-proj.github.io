@@ -127,44 +127,31 @@ $ cd lcm-X.Y.Z
 $ ./configure
 $ make
 $ make install
-</pre><h2><a class="anchor" id="build_windows"></a>
-Windows</h2>
+</pre>
+<h2>
+  <a class="anchor" id="build_windows"></a>
+  Windows</h2>
+<p>Requirements:</p>
+<ul>
+  <li>GLib for Windows (
+    <a href="http://www.gtk.org">http://www.gtk.org</a>). You'll need the following packages
+    <ul>
+      <li>GLib (Run-time, dev)</li>
+      <li>gettext-runtime (Run-time)</li>
+    </ul>
+  </li>
+</ul>
 <p>Requirements:</p><ul>
-<li>GLib for Windows (<a href="http://www.gtk.org">http://www.gtk.org</a>). You'll need the following packages<ul>
-<li>GLib (Run-time, dev)</li>
-<li>gettext-runtime (Run-time)</li>
-</ul>
-</li>
-</ul>
-<p>Building:</p><ol type="1">
-<li>Install dependencies</li>
-  <ol type="1.1">
-    <li>Install Python (64bit)</li>
-    <li>Install Python Path to environment variable PATH</li>
-    <li>Install Git</li>
-    <li>Install Cmake</li>
-    <li>Install MSYS2</li>
-    <li>Open MSYS shell (64bit) and install:</li>
-    <ol type="1.6.1">
-      <li>pacman -S base-devel</li>
-      <li>pacman -S gcc</li>
-      <li>pacman -S glib2 glib2-devel mingw-w64-x86_64-glib2</li>
+    <li>GLib for Windows (<a href="http://www.gtk.org">http://www.gtk.org</a>). You'll need the following packages<ul>
+    <li>GLib (Run-time, dev)</li>
+    <li>gettext-runtime (Run-time)</li>
+    </ul>
+    </li>
+    </ul>
+    <p>Building:</p><ol type="1">
+    <li>Follow the instructions in WinSpecific/README.txt to setup GLib.</li>
+    <li>Open WinSpecific/LCM.sln in MS Visual Studio and build the solution.</li>
     </ol>
-    <li>Add <msys2_root>\mingw64\bin to windows system PATH</li>
-    <li>Define GLIB_PATH environment variable: GLIB_PATH=<msys2_root>\mingw64</li>
-    <li>Clone LCM git clone https://github.com/lcm-proj/lcm.git</li>
-  </ol>
-<li>Build LCM:</li>
-<ol type="2.1">
-  <li>Open CMD as administrator</li>
-  <li>cd into cloned lcm repository</li>
-  <li>mkdir build</li>
-  <li>cd build</li>
-  <li>cmake .. -G"Visual Studio <Installed Version> <Year of Version> Win64" -DCMAKE_BUILD_TYPE=Release -DLCM_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=<Install_Path> -DGLIB2_GLIBCONFIG_INCLUDE_DIR="C:\msys64\mingw64\lib\glib-2.0\include" -DGLIB2_GLIB_INCLUDE_DIR="C:\msys64\mingw64\include\glib-2.0" -DGLIB2_GLIB_LIBRARY="C:\msys64\mingw64\lib\libglib-2.0.dll.a" -DGLIB2_GLIB_RUNTIME="C:\msys64\mingw64\bin\libglib-2.0.dll"</li>
-  <li>cmake --build path/to/your/build/dir --config Release --target install or --config Debug</li>
-  <li>set PYTHONPATH pointing to Install_Path/lib/sitepackages --> python import lcm working!!</li>
-</ol>
-</ol>
 <h2><a class="anchor" id="build_other"></a>
 Other / General</h2>
 <p>On other POSIX.1-2001 systems (e.g., other GNU/Linux distributions, FreeBSD, Solaris, etc.) the only major requirement is to install the GLib 2.x development files. If possible, a Java development kit and Python should also be installed. Then follow the</p>
@@ -203,7 +190,47 @@ $ make
 $ make install
 </pre><h2><a class="anchor" id="build_git_windows"></a>
 Windows</h2>
-<p>Same as building from a released version, as above.</p>
+<p>Building:</p>
+<ol>
+  <li>Install dependencies</li>
+  <ol>
+    <li>Install Python (64bit)</li>
+    <li>Install Python Path to environment variable PATH</li>
+    <li>Install Git</li>
+    <li>Install Cmake</li>
+    <li>Install MSYS2</li>
+    <li>Open MSYS shell (64bit) and install:
+      <ol>
+        <li>pacman -S base-devel</li>
+        <li>pacman -S gcc</li>
+        <li>pacman -S glib2 glib2-devel mingw-w64-x86_64-glib2</li>
+      </ol>
+    </li>
+    <li>Add
+      <msys2_root>\mingw64\bin to windows system PATH</li>
+    <li>Define GLIB_PATH environment variable: GLIB_PATH=
+      <msys2_root>\mingw64</li>
+    <li>Clone LCM git clone https://github.com/lcm-proj/lcm.git</li>
+  </ol>
+
+  <li>Build LCM:</li>
+  <ol>
+    <li>Open CMD as administrator</li>
+    <li>cd into cloned lcm repository</li>
+    <li>mkdir build</li>
+    <li>cd build</li>
+    <li>cmake .. -G"Visual Studio
+      <Installed Version>
+        <Year of Version> Win64" -DCMAKE_BUILD_TYPE=Release -DLCM_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=
+          <Install_Path> -DGLIB2_GLIBCONFIG_INCLUDE_DIR="C:\msys64\mingw64\lib\glib-2.0\include" -DGLIB2_GLIB_INCLUDE_DIR="C:\msys64\mingw64\include\glib-2.0"
+            -DGLIB2_GLIB_LIBRARY="C:\msys64\mingw64\lib\libglib-2.0.dll.a" -DGLIB2_GLIB_RUNTIME="C:\msys64\mingw64\bin\libglib-2.0.dll"</li>
+  </ol>
+  <li>Install lcm</li>
+    <ol>
+      <li>cmake --build path/to/your/build/dir --config Release --target install or --config Debug</li>
+      <li>set PYTHONPATH pointing to Install_Path/lib/sitepackages --> python import lcm working!!</li>
+    </ol>
+</ol>
 <h2><a class="anchor" id="build_git_other"></a>
 Other / General</h2>
 <p>To build from Git in other GNU/Linux distributions, FreeBSD, Solaris, etc., you'll need to install autotools. Then follow the terminal commands shown above for Ubuntu.</p>
