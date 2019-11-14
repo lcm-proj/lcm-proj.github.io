@@ -14,6 +14,7 @@ var searchData=
   ['lcm_5fhandle_5ftimeout',['lcm_handle_timeout',['../group__LcmC__lcm__t.html#ga48b225668d5c08264af47c7dd2ffb70f',1,'lcm.h']]],
   ['lcm_5fpublish',['lcm_publish',['../group__LcmC__lcm__t.html#gad5e45f05d1fcdf446901f20426b5a6cc',1,'lcm.h']]],
   ['lcm_5fsubscribe',['lcm_subscribe',['../group__LcmC__lcm__t.html#ga1c8521ce6e87cbbeb7bfd935d5c0d724',1,'lcm.h']]],
+  ['lcm_5fsubscription_5fget_5fqueue_5fsize',['lcm_subscription_get_queue_size',['../group__LcmC__lcm__t.html#ga23c481590e272a45a903e846adb118ba',1,'lcm.h']]],
   ['lcm_5fsubscription_5fset_5fqueue_5fcapacity',['lcm_subscription_set_queue_capacity',['../group__LcmC__lcm__t.html#ga774831f6fa42ba3d6e6fae8a64f45b3a',1,'lcm.h']]],
   ['lcm_5funsubscribe',['lcm_unsubscribe',['../group__LcmC__lcm__t.html#ga920fac8964a733d575dc83e7050c9287',1,'lcm.h']]],
   ['logfile',['LogFile',['../classlcm_1_1LogFile.html#aeb22a53fc2e531922ce867d7f192cf98',1,'lcm::LogFile']]]

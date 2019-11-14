@@ -1,8 +1,7 @@
 var searchData=
 [
   ['lightweight_20communications_20and_20marshalling_20_28lcm_29',['Lightweight Communications and Marshalling (LCM)',['../index.html',1,'']]],
-  ['lcm',['LCM',['../classlcm_1_1LCM.html',1,'lcm']]],
-  ['lcm',['lcm',['../struct__lcm__recv__buf__t.html#a327dabe1ca64b12cafe7e7a8f6650482',1,'_lcm_recv_buf_t::lcm()'],['../classlcm_1_1LCM.html#a18f8e2693cdafb36c4481789aa8ec24e',1,'lcm::LCM::LCM(std::string lcm_url=&quot;&quot;)'],['../classlcm_1_1LCM.html#a705349fd49d7321379bd5d0065d6c19a',1,'lcm::LCM::LCM(lcm_t *lcm_in)']]],
+  ['lcm',['LCM',['../classlcm_1_1LCM.html',1,'lcm::LCM'],['../struct__lcm__recv__buf__t.html#a327dabe1ca64b12cafe7e7a8f6650482',1,'_lcm_recv_buf_t::lcm()'],['../classlcm_1_1LCM.html#a18f8e2693cdafb36c4481789aa8ec24e',1,'lcm::LCM::LCM(std::string lcm_url=&quot;&quot;)'],['../classlcm_1_1LCM.html#a705349fd49d7321379bd5d0065d6c19a',1,'lcm::LCM::LCM(lcm_t *lcm_in)']]],
   ['lcm_5fcreate',['lcm_create',['../group__LcmC__lcm__t.html#gaf29963ef43edadf45296d5ad82c18d4b',1,'lcm.h']]],
   ['lcm_5fdestroy',['lcm_destroy',['../group__LcmC__lcm__t.html#ga4c86753e2e8c535bc8fb91d3763336e2',1,'lcm.h']]],
   ['lcm_5feventlog_5fcreate',['lcm_eventlog_create',['../group__LcmC__lcm__eventlog__t.html#ga987737db4bbef470bf724de07a3e9946',1,'eventlog.h']]],
@@ -14,12 +13,10 @@ var searchData=
   ['lcm_5fget_5ffileno',['lcm_get_fileno',['../group__LcmC__lcm__t.html#ga51bd65da2efbd1ef094cb36b4a906922',1,'lcm.h']]],
   ['lcm_5fhandle',['lcm_handle',['../group__LcmC__lcm__t.html#ga964c763e37b3c7f8af9ca37df381b10a',1,'lcm.h']]],
   ['lcm_5fhandle_5ftimeout',['lcm_handle_timeout',['../group__LcmC__lcm__t.html#ga48b225668d5c08264af47c7dd2ffb70f',1,'lcm.h']]],
-  ['lcm_5fmajor_5fversion',['LCM_MAJOR_VERSION',['../group__LcmC__lcm__t.html#ga6b4e59ecfa218a2be217b3e3e57dce6f',1,'lcm.h']]],
-  ['lcm_5fmicro_5fversion',['LCM_MICRO_VERSION',['../group__LcmC__lcm__t.html#ga7c3ab63e14ba96849a21a518d9142e97',1,'lcm.h']]],
-  ['lcm_5fminor_5fversion',['LCM_MINOR_VERSION',['../group__LcmC__lcm__t.html#ga23ab90805080f368a1be54ef9fb56e1c',1,'lcm.h']]],
   ['lcm_5fmsg_5fhandler_5ft',['lcm_msg_handler_t',['../group__LcmC__lcm__t.html#ga2cedfd752d27dc39c8ee0836993a3e53',1,'lcm.h']]],
   ['lcm_5fpublish',['lcm_publish',['../group__LcmC__lcm__t.html#gad5e45f05d1fcdf446901f20426b5a6cc',1,'lcm.h']]],
   ['lcm_5fsubscribe',['lcm_subscribe',['../group__LcmC__lcm__t.html#ga1c8521ce6e87cbbeb7bfd935d5c0d724',1,'lcm.h']]],
+  ['lcm_5fsubscription_5fget_5fqueue_5fsize',['lcm_subscription_get_queue_size',['../group__LcmC__lcm__t.html#ga23c481590e272a45a903e846adb118ba',1,'lcm.h']]],
   ['lcm_5fsubscription_5fset_5fqueue_5fcapacity',['lcm_subscription_set_queue_capacity',['../group__LcmC__lcm__t.html#ga774831f6fa42ba3d6e6fae8a64f45b3a',1,'lcm.h']]],
   ['lcm_5fsubscription_5ft',['lcm_subscription_t',['../group__LcmC__lcm__t.html#ga3149702f5022ed075e7aacb3bc261d00',1,'lcm.h']]],
   ['lcm_5ft',['lcm_t',['../group__LcmC__lcm__t.html#gabb730c9e49442a4bcf400e0f2fef7576',1,'lcm.h']]],
@@ -28,8 +25,7 @@ var searchData=
   ['lcm_5ft',['lcm_t',['../group__LcmC__lcm__t.html',1,'']]],
   ['lcm_20log_20file_20format',['LCM Log File format',['../log_file_format.html',1,'']]],
   ['logevent',['LogEvent',['../structlcm_1_1LogEvent.html',1,'lcm']]],
-  ['logfile',['LogFile',['../classlcm_1_1LogFile.html',1,'lcm']]],
-  ['logfile',['LogFile',['../classlcm_1_1LogFile.html#aeb22a53fc2e531922ce867d7f192cf98',1,'lcm::LogFile']]],
+  ['logfile',['LogFile',['../classlcm_1_1LogFile.html',1,'lcm::LogFile'],['../classlcm_1_1LogFile.html#aeb22a53fc2e531922ce867d7f192cf98',1,'lcm::LogFile::LogFile()']]],
   ['lua_20tutorial',['Lua Tutorial',['../tut_lua.html',1,'']]],
   ['lcm_20type_20specification_20language',['LCM Type Specification Language',['../type_specification.html',1,'']]],
   ['lcm_20udp_20multicast_20protocol_20description',['LCM UDP Multicast Protocol Description',['../udp_multicast_protocol.html',1,'']]]

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['lcm',['LCM',['../classLCM_1_1LCM_1_1LCM.html',1,'LCM::LCM']]],
-  ['lcm',['LCM',['../namespaceLCM.html',1,'LCM'],['../classLCM_1_1LCM_1_1LCM.html#a225eec91f461fa6f02b5dcc71933511f',1,'LCM.LCM.LCM.LCM()']]],
-  ['lcm',['LCM',['../namespaceLCM_1_1LCM.html',1,'LCM']]],
+  ['lcm',['LCM',['../classLCM_1_1LCM_1_1LCM.html',1,'LCM.LCM.LCM'],['../namespaceLCM.html',1,'LCM'],['../namespaceLCM_1_1LCM.html',1,'LCM.LCM'],['../classLCM_1_1LCM_1_1LCM.html#a225eec91f461fa6f02b5dcc71933511f',1,'LCM.LCM.LCM.LCM()']]],
   ['lcmdatainputstream',['LCMDataInputStream',['../classLCM_1_1LCM_1_1LCMDataInputStream.html',1,'LCM::LCM']]],
   ['lcmdataoutputstream',['LCMDataOutputStream',['../classLCM_1_1LCM_1_1LCMDataOutputStream.html',1,'LCM::LCM']]],
   ['lcmencodable',['LCMEncodable',['../interfaceLCM_1_1LCM_1_1LCMEncodable.html',1,'LCM::LCM']]],

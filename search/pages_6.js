@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['python_20tutorial',['Python Tutorial',['../tut_python.html',1,'']]]
+  ['matlab_20tutorial',['MATLAB Tutorial',['../tut_matlab.html',1,'']]]
 ];

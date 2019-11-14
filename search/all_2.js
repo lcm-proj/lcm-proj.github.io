@@ -5,6 +5,7 @@ var searchData=
   ['channellen',['channellen',['../struct__lcm__eventlog__event__t.html#a7b7ca8ac9402e08f2aea93fac7246b1f',1,'_lcm_eventlog_event_t']]],
   ['c_20api_20reference',['C API Reference',['../group__LcmC.html',1,'']]],
   ['c_2b_2b_20api_20reference',['C++ API Reference',['../group__LcmCpp.html',1,'']]],
-  ['c_2b_2b_20tutorial',['C++ Tutorial',['../tut_cpp.html',1,'']]],
-  ['c_20tutorial',['C Tutorial',['../tutorial_c.html',1,'']]]
+  ['c_20tutorial',['C Tutorial',['../tut_c.html',1,'']]],
+  ['cmake_20tutorial',['CMake Tutorial',['../tut_cmake.html',1,'']]],
+  ['c_2b_2b_20tutorial',['C++ Tutorial',['../tut_cpp.html',1,'']]]
 ];
