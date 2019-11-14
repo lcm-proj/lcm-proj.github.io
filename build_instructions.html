@@ -87,10 +87,15 @@ Ubuntu / Debian</h1>
 <p>Required packages:</p><ul>
 <li>build-essential</li>
 <li>libglib2.0-dev</li>
+<li>cmake</li>
 </ul>
-<p>Strongly recommended packages:</p><ul>
-<li>default-jdk (or openjdk-9-jdk)</li>
-<li>python-dev</li>
+<p>Optional packages (e.g., for language-specific support or building documentation):</p><ul>
+<li>default-jdk</li>
+<li>python-all-dev</li>
+<li>liblua5.1-dev</li>
+<li>golang</li>
+<li>doxygen</li>
+<li>python-epydoc</li>
 </ul>
 <p>From a terminal, run the following commands. </p><pre class="fragment">$ mkdir build
 $ cd build
@@ -101,7 +106,7 @@ $ sudo make install
 OS X</h1>
 <p>There are several ways to build LCM on OS X, none of which are necessarily better than the others.</p>
 <h2>Homebrew</h2>
-<p>Install Homebrew packages </p><pre class="fragment">$ brew install glib pkg-config
+<p>Install Homebrew packages </p><pre class="fragment">$ brew install glib pkg-config cmake
 </pre><p>Install Java. Type <code>javac</code> in a terminal, then follow the instructions.</p>
 <p>Download and build LCM. </p><pre class="fragment">$ mkdir build
 $ cd build
@@ -125,7 +130,7 @@ Windows</h1>
 <p>LCM is officially supported on Visual Studio 2015.</p>
 <h1><a class="anchor" id="build_other"></a>
 Other / General</h1>
-<p>On other POSIX.1-2001 systems (e.g., other GNU/Linux distributions, FreeBSD, Solaris, etc.) the only major requirement is to install the GLib 2.x development files. If possible, a Java development kit and Python should also be installed. Then follow the same instructions as for <a href="#build_ubuntu_debian">Ubuntu / Debian</a>.</p>
+<p>On other POSIX.1-2001 systems (e.g., other GNU/Linux distributions, FreeBSD, Solaris, etc.) the only major requirement is to install the GLib 2.x development files and CMake. If possible, a Java development kit and Python should also be installed. Then follow the same instructions as for <a href="#build_ubuntu_debian">Ubuntu / Debian</a>.</p>
 <h1><a class="anchor" id="build_post"></a>
 Post Install</h1>
 <h2><a class="anchor" id="build_post_linux"></a>
