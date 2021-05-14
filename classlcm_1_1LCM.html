@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="classlcm_1_1LCM-members.html">List of all members</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">lcm::LCM Class Reference<div class="ingroups"><a class="el" href="group__LcmCpp.html">C++ API Reference</a></div></div>  </div>
@@ -75,6 +76,12 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="lcm-cpp_8hpp_source.html">lcm/lcm-cpp.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:abc1afb99eee1eb108dd13d0c12b9fc01"><td class="memTemplParams" colspan="2">template&lt;class MessageType &gt; </td></tr>
+<tr class="memitem:abc1afb99eee1eb108dd13d0c12b9fc01"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#abc1afb99eee1eb108dd13d0c12b9fc01">HandlerFunction</a> = std::function&lt; void(const <a class="el" href="structlcm_1_1ReceiveBuffer.html">ReceiveBuffer</a> *rbuf, const std::string &amp;channel, const MessageType *msg)&gt;</td></tr>
+<tr class="separator:abc1afb99eee1eb108dd13d0c12b9fc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a18f8e2693cdafb36c4481789aa8ec24e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#a18f8e2693cdafb36c4481789aa8ec24e">LCM</a> (std::string lcm_url=&quot;&quot;)</td></tr>
@@ -121,6 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa18a362fee1eae7e84387eea98c2575f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#aa18a362fee1eae7e84387eea98c2575f">subscribeFunction</a> (const std::string &amp;channel, void(*handler)(const <a class="el" href="structlcm_1_1ReceiveBuffer.html">ReceiveBuffer</a> *rbuf, const std::string &amp;channel, ContextClass context), ContextClass context)</td></tr>
 <tr class="memdesc:aa18a362fee1eae7e84387eea98c2575f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe a function callback to a channel, without automatic message decoding.  <a href="#aa18a362fee1eae7e84387eea98c2575f">More...</a><br /></td></tr>
 <tr class="separator:aa18a362fee1eae7e84387eea98c2575f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d6d0c4831465186f6b8472a767fb58"><td class="memTemplParams" colspan="2">template&lt;class MessageType &gt; </td></tr>
+<tr class="memitem:a46d6d0c4831465186f6b8472a767fb58"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#a46d6d0c4831465186f6b8472a767fb58">subscribe</a> (const std::string &amp;channel, <a class="el" href="classlcm_1_1LCM.html#abc1afb99eee1eb108dd13d0c12b9fc01">HandlerFunction</a>&lt; MessageType &gt; handler)</td></tr>
+<tr class="memdesc:a46d6d0c4831465186f6b8472a767fb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes a callback function to a channel, with automatic message decoding.  <a href="#a46d6d0c4831465186f6b8472a767fb58">More...</a><br /></td></tr>
+<tr class="separator:a46d6d0c4831465186f6b8472a767fb58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9b48c70992c4d0c36d782208ca4dd93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlcm_1_1LCM.html#ac9b48c70992c4d0c36d782208ca4dd93">unsubscribe</a> (<a class="el" href="classlcm_1_1Subscription.html">Subscription</a> *subscription)</td></tr>
 <tr class="memdesc:ac9b48c70992c4d0c36d782208ca4dd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes a message handler.  <a href="#ac9b48c70992c4d0c36d782208ca4dd93">More...</a><br /></td></tr>
 <tr class="separator:ac9b48c70992c4d0c36d782208ca4dd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +141,25 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Core communications class for the C++ API. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="abc1afb99eee1eb108dd13d0c12b9fc01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1afb99eee1eb108dd13d0c12b9fc01">&#9670;&nbsp;</a></span>HandlerFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MessageType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classlcm_1_1LCM.html#abc1afb99eee1eb108dd13d0c12b9fc01">lcm::LCM::HandlerFunction</a> =  std::function&lt;void(const <a class="el" href="structlcm_1_1ReceiveBuffer.html">ReceiveBuffer</a> *rbuf, const std::string &amp;channel, const MessageType *msg)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Type alias for the handler function type. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a18f8e2693cdafb36c4481789aa8ec24e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18f8e2693cdafb36c4481789aa8ec24e">&#9670;&nbsp;</a></span>LCM() <span class="overload">[1/2]</span></h2>
 
@@ -472,7 +501,7 @@ template&lt;class MessageType &gt; </div>
 </div>
 </div>
 <a id="a1a71519b8fb0f942b385a60b70f87baf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a71519b8fb0f942b385a60b70f87baf">&#9670;&nbsp;</a></span>subscribe() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a71519b8fb0f942b385a60b70f87baf">&#9670;&nbsp;</a></span>subscribe() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,7 +552,7 @@ template&lt;class MessageType , class MessageHandlerClass &gt; </div>
 </div>
 </div>
 <a id="a17e2b44dca98698720552d3e76aa2e61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17e2b44dca98698720552d3e76aa2e61">&#9670;&nbsp;</a></span>subscribe() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a17e2b44dca98698720552d3e76aa2e61">&#9670;&nbsp;</a></span>subscribe() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -565,6 +594,50 @@ template&lt;class MessageHandlerClass &gt; </div>
     <tr><td class="paramname">channel</td><td>The channel to subscribe to. This is treated as a regular expression implicitly surrounded by '^' and '$'. </td></tr>
     <tr><td class="paramname">handlerMethod</td><td>A class method pointer identifying the callback method. </td></tr>
     <tr><td class="paramname">handler</td><td>A class instance that the callback method will be invoked on.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classlcm_1_1Subscription.html" title="Represents a channel subscription, and can be used to unsubscribe and set options. ">Subscription</a> object that can be used to adjust the subscription and unsubscribe. The <a class="el" href="classlcm_1_1Subscription.html" title="Represents a channel subscription, and can be used to unsubscribe and set options. ">Subscription</a> object is managed by the <a class="el" href="classlcm_1_1LCM.html" title="Core communications class for the C++ API. ">LCM</a> class, and is automatically destroyed when its <a class="el" href="classlcm_1_1LCM.html" title="Core communications class for the C++ API. ">LCM</a> instance is destroyed. </dd></dl>
+
+</div>
+</div>
+<a id="a46d6d0c4831465186f6b8472a767fb58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d6d0c4831465186f6b8472a767fb58">&#9670;&nbsp;</a></span>subscribe() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MessageType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlcm_1_1Subscription.html">Subscription</a> * lcm::LCM::subscribe </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classlcm_1_1LCM.html#abc1afb99eee1eb108dd13d0c12b9fc01">LCM::HandlerFunction</a>&lt; MessageType &gt;&#160;</td>
+          <td class="paramname"><em>handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subscribes a callback function to a channel, with automatic message decoding. </p>
+<p>This method is designed for use with C++ classes generated by <code>lcm-gen</code> <code></code>.</p>
+<p>The callback function will be invoked on the object when a message arrives on the specified channel. Prior to method invocation, <a class="el" href="classlcm_1_1LCM.html" title="Core communications class for the C++ API. ">LCM</a> will attempt to automatically decode the message to the specified message type <code>MessageType</code> <code></code>, which should be a class generated by <code>lcm-gen</code> <code></code>. If message decoding fails, the callback function is not invoked and an error message is printed to stderr.</p>
+<p>The callback function is invoked during calls to <a class="el" href="classlcm_1_1LCM.html#aac221c0fa80ede30a2383fba612f972e" title="Waits for and dispatches messages. ">LCM::handle()</a>. Callback methods are invoked by the same thread that invokes <a class="el" href="classlcm_1_1LCM.html#aac221c0fa80ede30a2383fba612f972e" title="Waits for and dispatches messages. ">LCM::handle()</a>, in the order that they were subscribed.</p>
+<p>For example:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;exlcm/example_t.lcm&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;lcm/lcm-cpp.hpp&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div><div class="line">  <a class="code" href="classlcm_1_1LCM.html">lcm::LCM</a> lcm;</div><div class="line">  <a class="code" href="classlcm_1_1LCM.html#abc1afb99eee1eb108dd13d0c12b9fc01">lcm::LCM::HandlerFunction&lt;exlcm::example_t&gt;</a> func;</div><div class="line">  func = [](<span class="keyword">const</span> <a class="code" href="structlcm_1_1ReceiveBuffer.html">lcm::ReceiveBuffer</a>* rbuf, <span class="keyword">const</span> std::string&amp; channel,</div><div class="line">            <span class="keyword">const</span> exlcm::example_t* msg) {</div><div class="line">      <span class="comment">// do something with the message</span></div><div class="line">  }</div><div class="line">  lcm.<a class="code" href="classlcm_1_1LCM.html#a1a71519b8fb0f942b385a60b70f87baf">subscribe</a>(<span class="stringliteral">&quot;CHANNEL&quot;</span>, func);</div><div class="line">  <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div><div class="line">    lcm.<a class="code" href="classlcm_1_1LCM.html#aac221c0fa80ede30a2383fba612f972e">handle</a>();</div><div class="line">  <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel to subscribe to. This is treated as a regular expression implicitly surrounded by '^' and '$'. </td></tr>
+    <tr><td class="paramname">handler</td><td>A handler function, for example a lambda.</td></tr>
   </table>
   </dd>
 </dl>
